@@ -1,0 +1,1 @@
+"""q1 Richest customer wealth lc1672"""

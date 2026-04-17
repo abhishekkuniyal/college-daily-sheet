@@ -13,7 +13,7 @@
 print(threesum([-1,0,1,2,-1,-4]))"""
 
 
-def threesum(nums):
+"""def threesum(nums):
    new = set()
    target = 0
    n = len(nums)
@@ -27,4 +27,46 @@ def threesum(nums):
 
          seen.add(nums[j])
    return list(new)
-print(threesum([-1,0,1,2,-1,-4]))
+print(threesum([-1,0,1,2,-1,-4]))"""
+
+
+
+"""subarray sums k"""
+"""
+def subarraysum(nums,m):
+   sub = []
+   for i in range(len(nums)):
+      for j in range(i+1, len(nums)+1):
+         sub.append(nums[i:j])
+   add = []
+   for k in range (len(sub)):
+      add.append(sum(sub[k]))
+   freq = {}
+   for k in add:
+      if k in freq:
+         freq[k] +=1
+      else:
+         freq[k] = 1
+   for key,value in freq.items():
+      if key == m:
+         return value
+print(subarraysum([1,2,3],3))"""
+
+"""different approach"""
+
+"""prefix sum array"""
+
+"""def prefixsum(arr):
+   prefix = [0]*len(arr)
+   prefix[0]= arr[0]
+
+   for i in range(len(arr)):
+      prefix[i]= prefix[i-1]+ arr[i]
+   return prefix
+
+
+
+print(prefixsum([1,2,3]))"""
+
+
+"""mximum subarray product"""

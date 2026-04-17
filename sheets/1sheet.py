@@ -79,3 +79,17 @@ print(icecream([7,3,3,6,6,6,10,5,9,2],56))"""
    return winner+1
 
 print(findthewinner(5,2))"""
+
+
+
+"""pascale triangle"""
+
+
+def pastriangle(rows):
+   for i in range(rows):
+      print("")
+      for j in range(i+1):
+          print(j,end=" ")
+   print(" ")
+
+(pastriangle(5))

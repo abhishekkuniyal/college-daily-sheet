@@ -70,3 +70,12 @@ print(prefixsum([1,2,3]))"""
 
 
 """mximum subarray product"""
+def maxproductsum(arr):
+  prefix_pro = [0]*len(arr)
+  prefix_pro[0]= arr[0]
+  for i in range(1,len(arr)):
+    prefix_pro[i]= prefix_pro[i-1]*arr[i]
+
+  return max(prefix_pro)
+
+print(maxproductsum([2,3,-2,4]))

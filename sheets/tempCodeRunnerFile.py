@@ -1,12 +1,11 @@
-
-def prefixsum(arr):
-   prefix = [0]*len(arr)
-   prefix[0]= arr[0]
-
-   for i in range(1,len(arr)):
-      prefix[i]= prefix[i-1]+ arr[i]
-   return prefix
-
-
-
-print(prefixsum([1,2,3]))
+def happynumber(n):
+   seen = set()
+   while n!=1:
+      if n in seen:
+         return False
+      seen.add(n)
+      n = sum(int(digit)**2 for digit in str(n))
+         
+   return n
+print(happynumber(100)
+)

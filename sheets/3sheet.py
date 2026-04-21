@@ -28,7 +28,7 @@ n = int(input("enter the number you have to find the reversed:"))
 print(revresenumber(n))
 """
 
-def happynumber(n):
+"""def happynumber(n):
    seen = set()
    while n!=1:
       if n in seen:
@@ -38,4 +38,29 @@ def happynumber(n):
          
    return True
 print(happynumber(100)
-)
+)"""
+
+
+"""150. Evaluate Reverse Polish Notation"""
+
+def polish(tokens):
+ 
+    stack = []
+    for token in tokens:
+        if token not in "+-*/":
+            stack.append(int(token))
+        else:
+            b = stack.pop()
+            a = stack.pop()
+
+            if token == "+":
+                stack.append(a+b)
+            elif token == "-":
+                stack.append(a-b)
+            elif token == "*":
+                stack.append(a*b)
+            elif token == "/":
+                stack.append(int(a/b))
+    return stack[0]
+
+print(polish(["2","1","+","3","*"]))

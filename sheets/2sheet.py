@@ -70,7 +70,7 @@ print(prefixsum([1,2,3]))"""
 
 
 """mximum subarray product"""
-def maxproductsum(arr):
+"""def maxproductsum(arr):
   prefix_pro = [0]*len(arr)
   prefix_pro[0]= arr[0]
   for i in range(1,len(arr)):
@@ -78,4 +78,32 @@ def maxproductsum(arr):
 
   return max(prefix_pro)
 
-print(maxproductsum([2,3,-2,4]))
+print(maxproductsum([2,3,-2,4]))"""
+
+
+
+
+"""maximums subarray sum"""
+"""def subarr(nums):
+   sub = []
+   for i in range(len(nums)):
+      for j in range(i+1,len(nums)+1):
+         sub.append(nums[i:j])
+   sumar = []
+   for k in sub:
+      sumar.append(sum(k))
+   return max(sumar)
+print(subarr([-2,1,-3,4,-1,2,1,-5,4]))"""
+
+
+def prefixsum(arr):
+   prefix = [0]*len(arr)
+   prefix[0]= arr[0]
+
+   for i in range(len(arr)):
+      prefix[i]= prefix[i-1]+ arr[i]
+   return(prefix)
+
+
+
+print(prefixsum([-2,1,-3,4,-1,2,1,-5,4]))
